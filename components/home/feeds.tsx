@@ -12,7 +12,7 @@ export const FEEDS = (user: UserLean | null | undefined) => [
           listEmptyComponent={
             <EmptyFlatList
               text={`You are not following anyone!\n\nGet out there!`}
-              bgColor="bg-blue-600"
+              bgColor="bg-gray-800"
               textColor="#f5ec00"
               textShadowColor="#e22400"
             />

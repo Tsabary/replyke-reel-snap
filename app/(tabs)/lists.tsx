@@ -38,9 +38,9 @@ function Bookmarks() {
                 <View className="flex-1" style={{ height: listHeight }}>
                   <EmptyFlatList
                     text={`Oops, No bookmarks Yet!\n\nStart saving your favorites to find them here easily anytime.!`}
-                    bgColor="bg-white"
-                    textColor="#16A34A"
-                    textShadowColor="#f5ec00"
+                    bgColor="bg-gray-800"
+                    textColor="#f5ec00"
+                    textShadowColor="#e22400"
                   />
                 </View>
               }

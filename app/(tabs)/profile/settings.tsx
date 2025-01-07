@@ -5,7 +5,7 @@ import { Link, Redirect, useRouter } from "expo-router";
 import { useAuth as useAuthReplyke, useUser } from "replyke-rn";
 import { showMessage } from "react-native-flash-message";
 import { StatusBar } from "expo-status-bar";
-import { useAuth as useAuthClerk } from "@clerk/clerk-expo";
+// import { useAuth as useAuthClerk } from "@clerk/clerk-expo";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
@@ -15,7 +15,7 @@ const Settings = () => {
   const router = useRouter();
   const { loadingInitial, signOut: signOutReplyke } = useAuthReplyke();
   const { user } = useUser();
-  const { signOut: signOutClerk } = useAuthClerk();
+  // const { signOut: signOutClerk } = useAuthClerk(); // f using clerk, we need to sing out both from replyke and from Clerk (or any other provider)
 
   if (loadingInitial) return null;
   if (!user) return <Redirect href="/authenticate" />;
@@ -39,9 +39,9 @@ const Settings = () => {
             </Pressable>
             <Pressable
               onPress={() => {
-                // We need to sign out both from Replyke and from our user managment provider, is we use one
+                // We need to sign out both from Replyke and from our user managment provider, if we use one
                 signOutReplyke?.();
-                signOutClerk();
+                // signOutClerk();
                 showMessage({
                   message: "Ciao for Now",
                   description: "Until next time, stay awesome!",
@@ -50,7 +50,7 @@ const Settings = () => {
               className="flex flex-row items-center gap-4 p-4"
             >
               <MaterialIcons name="logout" size={22} color="#1f2937" />
-              <Text className="text-gray-800 text-lg">Log out</Text>
+              <Text className="text-gray-800 text-lg">Sign out</Text>
             </Pressable>
           </View>
         </View>

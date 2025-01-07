@@ -72,9 +72,9 @@ function Notifications() {
                 <View className="flex-1" style={{ height: listHeight }}>
                   <EmptyFlatList
                     text={`Nothing here yet!\n\nGet out there and the notifications will roll in!`}
-                    bgColor="bg-white"
-                    textColor="#e22400"
-                    textShadowColor="#f5ec00"
+                    bgColor="bg-gray-800"
+                    textColor="#f5ec00"
+                    textShadowColor="#e22400"
                   />
                 </View>
               )
