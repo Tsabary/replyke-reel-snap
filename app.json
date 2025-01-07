@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Replyke Social Boilerplate",
-    "slug": "replyke-social-boilerplate",
+    "name": "Replyke Reel Snap Boilerplate",
+    "slug": "replyke-reel-snap-boilerplate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

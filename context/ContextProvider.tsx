@@ -12,8 +12,6 @@ import {
 import { SheetManagerProvider } from "./SheetManagerContext";
 
 function ContextProvider({ children }: { children: React.ReactNode }) {
-
-
   // TODO: Below is an example of how to get a signedToken when usin Clerk. Comment out if using Clerk, or comment out and edit i fusing a different authentication provider. If using Replyke's email + password authentication, leave commented out or remove.
 
   // const { user: userClerk } = useUserClerk();
@@ -25,7 +23,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
   //     try {
   //       const token = await getToken(); // Get the Clerk session token
 
-  //       const path = "https://replyke-briefly.up.railway.app/sign-token";
+  //       const path = process.env.EXPO_PUBLIC_SERVER_URL + "/sign-token";
   //       const response = await axios.get(path, {
   //         headers: {
   //           Authorization: `Bearer ${token}`, // Include the token in the Authorization header

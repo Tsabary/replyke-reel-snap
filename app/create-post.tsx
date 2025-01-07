@@ -14,7 +14,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Redirect, useRouter } from "expo-router";
 import { showMessage } from "react-native-flash-message";
 import { StatusBar } from "expo-status-bar";
-import { colorKit } from "reanimated-color-picker";
 
 function CreatePost() {
   const router = useRouter();
@@ -60,13 +59,30 @@ function CreatePost() {
   };
 
   useEffect(() => {
-    const initialBackground = colorKit.randomRgbColor().hex();
-    const initialTextColor = colorKit.invert(initialBackground).hex();
+    const generateColors = () => {
+      const randomHex = (): string =>
+        Math.floor(Math.random() * 256)
+          .toString(16)
+          .padStart(2, "0");
 
-    setBackgroundColor(initialBackground);
-    setTextColor(initialTextColor);
+      const randomColor = `#${randomHex()}${randomHex()}${randomHex()}`;
+
+      const invertedColor = `#${
+        randomColor
+          .slice(1)
+          .match(/.{2}/g) // Split into pairs of two hex digits
+          ?.map((component) =>
+            (255 - parseInt(component, 16)).toString(16).padStart(2, "0")
+          )
+          .join("") ?? "ffffff"
+      }`; // Default to white if match is null
+
+      setBackgroundColor(randomColor);
+      setTextColor(invertedColor);
+    };
+
+    generateColors();
   }, []);
-
   if (loadingInitial) return null;
   if (!user) return <Redirect href="/authenticate" />;
 
