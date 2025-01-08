@@ -14,7 +14,6 @@ import { StatusBar } from "expo-status-bar";
 
 import BackNavigation from "../../components/shared/BackNavigation";
 import { groupNotifications } from "../../helpers/groupNotifications";
-import EmptyFlatList from "../../components/shared/EmptyFlatList";
 import { SingleNotification } from "../../components/notifications/SingleNotification";
 
 function Notifications() {
@@ -69,13 +68,20 @@ function Notifications() {
             onEndReachedThreshold={0}
             ListEmptyComponent={
               hasMore ? null : (
-                <View className="flex-1" style={{ height: listHeight }}>
-                  <EmptyFlatList
-                    text={`Nothing here yet!\n\nGet out there and the notifications will roll in!`}
-                    bgColor="bg-gray-800"
-                    textColor="#f5ec00"
-                    textShadowColor="#e22400"
-                  />
+                <View
+                  className="flex-1"
+                  style={{
+                    height: listHeight,
+                    backgroundColor: "white",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Text className="text-center text-xl font-medium text-gray-400">
+                    Nothing here yet
+                  </Text>
+                  <Text className="text-center text-lg text-gray-400 mt-2">
+                    Get out there and the notifications will roll in!
+                  </Text>
                 </View>
               )
             }

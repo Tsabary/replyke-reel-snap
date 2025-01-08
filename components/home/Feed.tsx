@@ -1,9 +1,8 @@
 import React, { useCallback, useRef, useState } from "react";
 import { EntityProvider, useFeed } from "replyke-rn";
 import Skeleton from "../shared/Skeleton";
-import { Animated, RefreshControl, View } from "react-native";
+import { Animated, RefreshControl, View, Text } from "react-native";
 import { SinglePost } from "../SinglePost";
-import EmptyFlatList from "../shared/EmptyFlatList";
 
 function Feed({
   listEmptyComponent,
@@ -57,12 +56,20 @@ function Feed({
           loading ? null : (
             <View className="flex-1" style={{ height: listHeight }}>
               {listEmptyComponent ?? (
-                <EmptyFlatList
-                  text={`No Results\n\nTry expanding your search!`}
-                  bgColor="bg-blue-600"
-                  textColor="#f5ec00"
-                  textShadowColor="#e22400"
-                />
+                <View
+                  className="flex-1"
+                  style={{
+                    backgroundColor: "white",
+                    justifyContent: "center",
+                  }}
+                >
+                  <Text className="text-center text-xl font-medium text-gray-400">
+                    No Results
+                  </Text>
+                  <Text className="text-center text-lg text-gray-400 mt-2">
+                    Try expanding your search
+                  </Text>
+                </View>
               )}
             </View>
           )

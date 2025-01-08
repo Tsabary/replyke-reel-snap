@@ -16,9 +16,6 @@ const SingleBookmark = ({ entity }: { entity: Partial<Entity> }) => {
       onPress={() => {
         router.push(`/post/${entity.id}`);
         closeSaveToListSheet?.();
-        if (router.canGoBack()) {
-          router.dismissAll();
-        }
       }}
       className="px-4 py-2.5 flex-row gap-3 items-center"
     >

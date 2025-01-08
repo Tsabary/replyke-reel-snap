@@ -26,7 +26,6 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded] = useFonts({
-    Bungee: require("../assets/fonts/Bungee-Regular.ttf"),
     Playfair: require("../assets/fonts/PlayfairDisplay-VariableFont_wght.ttf"),
   });
 

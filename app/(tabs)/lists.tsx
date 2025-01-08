@@ -6,7 +6,6 @@ import Entypo from "@expo/vector-icons/Entypo";
 import { StatusBar } from "expo-status-bar";
 import { Redirect } from "expo-router";
 
-import EmptyFlatList from "../../components/shared/EmptyFlatList";
 import BackNavigation from "../../components/shared/BackNavigation";
 import SingleBookmark from "../../components/lists/SingleBookmark";
 import { BookmarkSkeleton } from "../../components/shared/Skeleton";
@@ -35,13 +34,20 @@ function Bookmarks() {
                 <SingleBookmark entity={entity} />
               )}
               ListEmptyComponent={
-                <View className="flex-1" style={{ height: listHeight }}>
-                  <EmptyFlatList
-                    text={`Oops, No bookmarks Yet!\n\nStart saving your favorites to find them here easily anytime.!`}
-                    bgColor="bg-gray-800"
-                    textColor="#f5ec00"
-                    textShadowColor="#e22400"
-                  />
+                <View
+                  className="flex-1"
+                  style={{
+                    backgroundColor: "white",
+                    justifyContent: "center",
+                    height: listHeight,
+                  }}
+                >
+                  <Text className="text-center text-xl font-medium text-gray-400">
+                    Oops, No bookmarks Yet
+                  </Text>
+                  <Text className="text-center text-lg text-gray-400 mt-2">
+                    Start saving your favorites to find them here easily anytime
+                  </Text>
                 </View>
               }
             />
