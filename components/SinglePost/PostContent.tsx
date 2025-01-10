@@ -28,7 +28,7 @@ const PostContent = ({
       >
         <Text
           style={{
-            fontSize: 36,
+            fontSize: 24,
             textAlign: "center",
             color: entity.metadata.textColor,
           }}

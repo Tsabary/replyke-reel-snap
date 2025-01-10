@@ -12,9 +12,10 @@ import {
 import { handleError, useAuth, useCreateEntity, useUser } from "replyke-rn";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Redirect, useRouter } from "expo-router";
-import { showMessage } from "react-native-flash-message";
 import { StatusBar } from "expo-status-bar";
 
+const CONTENT =
+  "This placeholder represents where your users can create and upload posts. Customize it to match your app’s purpose—whether that’s images, videos, recipes, or anything else your platform is built for. The functionality here is entirely up to you, designed to reflect the kind of content you want your users to share!";
 function CreatePost() {
   const router = useRouter();
   const { loadingInitial } = useAuth();
@@ -24,7 +25,6 @@ function CreatePost() {
   const [submittingState, setSubmittingState] = useState(false);
 
   const createEntity = useCreateEntity();
-  const [content, setContent] = useState("");
   const [backgroundColor, setBackgroundColor] = useState("#fff");
   const [textColor, setTextColor] = useState("#fff");
 
@@ -38,18 +38,11 @@ function CreatePost() {
 
   const handleCreateEntity = async () => {
     if (submitting.current) return;
-    if (!content) {
-      showMessage({
-        message: "Oops! Empty post",
-        description: "Please add more content to your post.",
-        type: "warning",
-      });
-      return;
-    }
+
     submitting.current = true;
     setSubmittingState(true);
     try {
-      await createEntity?.({ content: content.trim(), metadata: config });
+      await createEntity?.({ content: CONTENT, metadata: config });
       if (router.canGoBack()) router.back();
     } catch (err) {
       submitting.current = false;
@@ -117,37 +110,15 @@ function CreatePost() {
             onPress={() => textInputRef.current?.focus()}
           >
             <View className="flex-1 p-4 py-16 justify-center">
-              <View className="relative w-full">
-                {!content && !focused && (
-                  <Text
-                    style={{
-                      color: textColor,
-                      textAlign: "center",
-                      fontSize: 36,
-                    }}
-                    className="w-full absolute top-0 left-0"
-                  >
-                    Write something
-                  </Text>
-                )}
-                <TextInput
-                  ref={textInputRef}
-                  value={content}
-                  onChangeText={(val) => {
-                    if (val.length <= 3000) setContent(val);
-                  }}
-                  onFocus={() => setFocused(true)}
-                  onBlur={() => setFocused(false)}
-                  style={{
-                    width: "100%",
-                    color: textColor,
-                    textAlign: "center",
-                    fontSize: 36,
-                  }}
-                  className="caret-gray-500"
-                  multiline
-                />
-              </View>
+              <Text
+                style={{
+                  color: textColor,
+                  textAlign: "center",
+                  fontSize: 24,
+                }}
+              >
+                {CONTENT}
+              </Text>
             </View>
           </TouchableWithoutFeedback>
         </View>
