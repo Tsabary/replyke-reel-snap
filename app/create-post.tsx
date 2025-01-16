@@ -1,11 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
   View,
-  KeyboardAvoidingView,
-  Platform,
   Pressable,
-  TouchableWithoutFeedback,
-  TextInput,
   Text,
   ActivityIndicator,
 } from "react-native";
@@ -32,9 +28,6 @@ function CreatePost() {
     backgroundColor,
     textColor,
   };
-
-  const textInputRef = useRef<TextInput>(null);
-  const [focused, setFocused] = useState(false);
 
   const handleCreateEntity = async () => {
     if (submitting.current) return;
@@ -76,53 +69,46 @@ function CreatePost() {
 
     generateColors();
   }, []);
+
   if (loadingInitial) return null;
   if (!user) return <Redirect href="/authenticate" />;
 
   return (
     <SafeAreaView className="flex-1">
       <StatusBar style="light" backgroundColor="black" />
-      <KeyboardAvoidingView
-        behavior={Platform.OS === "ios" ? "padding" : "height"}
-        className="flex-1"
-      >
-        <View className="flex-1" style={{ backgroundColor }}>
-          <View className="flex-1 absolute top-0 left-0 right-0 z-50 flex-row justify-end p-3">
-            {submittingState ? (
-              <ActivityIndicator />
-            ) : (
-              <Pressable onPress={handleCreateEntity} className="p-3">
-                <Text
-                  className="text-xl text-white tracking-wide"
-                  style={{
-                    textShadowColor: "#00000066",
-                    textShadowRadius: 6,
-                    textShadowOffset: { width: 0, height: 0 },
-                  }}
-                >
-                  Publish
-                </Text>
-              </Pressable>
-            )}
-          </View>
-          <TouchableWithoutFeedback
-            className="flex-1"
-            onPress={() => textInputRef.current?.focus()}
-          >
-            <View className="flex-1 p-4 py-16 justify-center">
+
+      <View className="flex-1" style={{ backgroundColor }}>
+        <View className="flex-1 absolute top-0 left-0 right-0 z-50 flex-row justify-end p-3">
+          {submittingState ? (
+            <ActivityIndicator />
+          ) : (
+            <Pressable onPress={handleCreateEntity} className="p-3">
               <Text
+                className="text-xl text-white tracking-wide"
                 style={{
-                  color: textColor,
-                  textAlign: "center",
-                  fontSize: 24,
+                  textShadowColor: "#00000066",
+                  textShadowRadius: 6,
+                  textShadowOffset: { width: 0, height: 0 },
                 }}
               >
-                {CONTENT}
+                Publish
               </Text>
-            </View>
-          </TouchableWithoutFeedback>
+            </Pressable>
+          )}
         </View>
-      </KeyboardAvoidingView>
+
+        <View className="flex-1 p-4 py-16 justify-center">
+          <Text
+            style={{
+              color: textColor,
+              textAlign: "center",
+              fontSize: 24,
+            }}
+          >
+            {CONTENT}
+          </Text>
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
