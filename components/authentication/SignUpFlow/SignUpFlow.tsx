@@ -69,11 +69,10 @@ const EmailPasswordSignUp = forwardRef(
       try {
         setIsCreating(true);
         await signUpWithEmailAndPassword?.({ email, password });
-
-        resetForm();
       } catch (err) {
+        animateToStage("email");
+        resetForm();
         handleError(err, "Error during sign-up:");
-      } finally {
         setIsCreating(false);
       }
     };

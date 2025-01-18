@@ -1,116 +1,193 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   View,
-  Pressable,
   Text,
-  ActivityIndicator,
+  Button,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
 } from "react-native";
-import { handleError, useAuth, useCreateEntity, useUser } from "replyke-rn";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Redirect, useRouter } from "expo-router";
-import { StatusBar } from "expo-status-bar";
+import { CameraView, CameraType, useCameraPermissions } from "expo-camera";
+import * as ImagePicker from "expo-image-picker";
+import { ResizeMode, Video } from "expo-av";
 
-const CONTENT =
-  "This placeholder represents where your users can create and upload posts. Customize it to match your app’s purpose—whether that’s images, videos, recipes, or anything else your platform is built for. The functionality here is entirely up to you, designed to reflect the kind of content you want your users to share!";
-function CreatePost() {
-  const router = useRouter();
-  const { loadingInitial } = useAuth();
-  const { user } = useUser();
+const CreatePost: React.FC = () => {
+  const [facing, setFacing] = useState<CameraType>("back");
+  const [permission, requestPermission] = useCameraPermissions();
+  const cameraRef = useRef<any>(null);
+  const [isRecording, setIsRecording] = useState(false);
+  const [capturedMedia, setCapturedMedia] = useState<{
+    type: "photo" | "video";
+    uri: string;
+  } | null>(null);
 
-  const submitting = useRef(false);
-  const [submittingState, setSubmittingState] = useState(false);
+  if (!permission) {
+    return <View />;
+  }
 
-  const createEntity = useCreateEntity();
-  const [backgroundColor, setBackgroundColor] = useState("#fff");
-  const [textColor, setTextColor] = useState("#fff");
+  if (!permission.granted) {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.message}>
+          We need your permission to show the camera
+        </Text>
+        <Button onPress={requestPermission} title="Grant Permission" />
+      </View>
+    );
+  }
 
-  const config: Record<string, any> = {
-    backgroundColor,
-    textColor,
-  };
+  const pickFromGallery = async () => {
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      quality: 1,
+    });
 
-  const handleCreateEntity = async () => {
-    if (submitting.current) return;
-
-    submitting.current = true;
-    setSubmittingState(true);
-    try {
-      await createEntity?.({ content: CONTENT, metadata: config });
-      if (router.canGoBack()) router.back();
-    } catch (err) {
-      submitting.current = false;
-      setSubmittingState(false);
-      handleError(err, "Creating entity failed");
+    if (!result.canceled) {
+      console.log("Selected from gallery:", result.assets[0]);
     }
   };
 
-  useEffect(() => {
-    const generateColors = () => {
-      const randomHex = (): string =>
-        Math.floor(Math.random() * 256)
-          .toString(16)
-          .padStart(2, "0");
+  const toggleCameraFacing = () => {
+    setFacing((current) => (current === "back" ? "front" : "back"));
+  };
 
-      const randomColor = `#${randomHex()}${randomHex()}${randomHex()}`;
+  const handleCapture = async () => {
+    if (cameraRef.current && !isRecording) {
+      const photo = await cameraRef.current.takePhotoAsync();
+      setCapturedMedia({ type: "photo", uri: photo.uri });
+    }
+  };
 
-      const invertedColor = `#${
-        randomColor
-          .slice(1)
-          .match(/.{2}/g) // Split into pairs of two hex digits
-          ?.map((component) =>
-            (255 - parseInt(component, 16)).toString(16).padStart(2, "0")
-          )
-          .join("") ?? "ffffff"
-      }`; // Default to white if match is null
+  const handleStartRecording = async () => {
+    if (cameraRef.current && !isRecording) {
+      setIsRecording(true);
+      const video = await cameraRef.current.startRecordingAsync({
+        maxDuration: 10,
+      });
+      setIsRecording(false);
+      setCapturedMedia({ type: "video", uri: video.uri });
+    }
+  };
 
-      setBackgroundColor(randomColor);
-      setTextColor(invertedColor);
-    };
+  const handleStopRecording = () => {
+    if (cameraRef.current && isRecording) {
+      cameraRef.current.stopRecording();
+    }
+  };
 
-    generateColors();
-  }, []);
+  const dismissMedia = () => {
+    setCapturedMedia(null);
+  };
 
-  if (loadingInitial) return null;
-  if (!user) return <Redirect href="/authenticate" />;
+  const publishMedia = () => {
+    console.log("Publishing media:", capturedMedia);
+    setCapturedMedia(null);
+  };
 
   return (
-    <SafeAreaView className="flex-1">
-      <StatusBar style="light" backgroundColor="black" />
-
-      <View className="flex-1" style={{ backgroundColor }}>
-        <View className="flex-1 absolute top-0 left-0 right-0 z-50 flex-row justify-end p-3">
-          {submittingState ? (
-            <ActivityIndicator />
+    <View style={styles.container}>
+      {capturedMedia ? (
+        <View style={styles.previewContainer}>
+          {capturedMedia.type === "photo" ? (
+            <Image source={{ uri: capturedMedia.uri }} style={styles.media} />
           ) : (
-            <Pressable onPress={handleCreateEntity} className="p-3">
-              <Text
-                className="text-xl text-white tracking-wide"
-                style={{
-                  textShadowColor: "#00000066",
-                  textShadowRadius: 6,
-                  textShadowOffset: { width: 0, height: 0 },
-                }}
-              >
-                Publish
-              </Text>
-            </Pressable>
+            <Video
+              source={{ uri: capturedMedia.uri }}
+              style={styles.media}
+              useNativeControls
+              resizeMode={ResizeMode.CONTAIN}
+            />
           )}
+          <View style={styles.actionButtons}>
+            <Button title="Publish" onPress={publishMedia} />
+            <Button title="Dismiss" onPress={dismissMedia} />
+          </View>
         </View>
-
-        <View className="flex-1 p-4 py-16 justify-center">
-          <Text
-            style={{
-              color: textColor,
-              textAlign: "center",
-              fontSize: 24,
-            }}
-          >
-            {CONTENT}
-          </Text>
-        </View>
-      </View>
-    </SafeAreaView>
+      ) : (
+        <CameraView
+          style={styles.camera}
+          facing={facing}
+          ref={(ref) => {
+            cameraRef.current = ref;
+          }}
+        >
+          <View style={styles.controls}>
+            <TouchableOpacity style={styles.button} onPress={pickFromGallery}>
+              <Text style={styles.text}>Gallery</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.button, isRecording && styles.recordingButton]}
+              onPress={handleCapture}
+              onLongPress={handleStartRecording}
+              onPressOut={handleStopRecording}
+            >
+              <Text style={styles.text}>
+                {isRecording ? "Recording..." : "Capture"}
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={toggleCameraFacing}
+            >
+              <Text style={styles.text}>Flip Camera</Text>
+            </TouchableOpacity>
+          </View>
+        </CameraView>
+      )}
+    </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  camera: {
+    flex: 1,
+    width: "100%",
+  },
+  controls: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    position: "absolute",
+    bottom: 20,
+    width: "100%",
+  },
+  button: {
+    padding: 10,
+    backgroundColor: "rgba(255, 255, 255, 0.8)",
+    borderRadius: 5,
+  },
+  recordingButton: {
+    backgroundColor: "red",
+  },
+  text: {
+    fontSize: 16,
+    color: "black",
+  },
+  message: {
+    fontSize: 18,
+    textAlign: "center",
+    marginBottom: 10,
+  },
+  previewContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  media: {
+    width: "100%",
+    height: "80%",
+  },
+  actionButtons: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    width: "100%",
+    marginTop: 10,
+  },
+});
 
 export default CreatePost;

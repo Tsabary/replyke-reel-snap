@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { View, Dimensions, KeyboardAvoidingView, Platform } from "react-native";
 import Animated, {
   useSharedValue,
@@ -6,7 +6,7 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 import { useUser } from "replyke-rn";
-import { useRouter } from "expo-router";
+import { Redirect } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
 
@@ -16,7 +16,6 @@ import LoginContainer from "../components/authentication/LoginContainer";
 const { width } = Dimensions.get("window");
 
 const Authenticate = () => {
-  const router = useRouter();
   const { user } = useUser();
   const [signUpStage, setSignUpStage] = useState<"email" | "password">("email");
 
@@ -36,9 +35,7 @@ const Authenticate = () => {
     ],
   }));
 
-  useEffect(() => {
-    if (user) router.back();
-  }, [user]);
+  if (user) return <Redirect href="/" />;
 
   return (
     <>

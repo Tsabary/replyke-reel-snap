@@ -1,7 +1,6 @@
 import {
   AppNotificationsProvider,
-  AuthProvider,
-  ProjectProvider,
+  ReplykeProvider,
   TokenManager,
 } from "replyke-rn";
 // import axios from "axios";
@@ -42,32 +41,33 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
   // }, [userClerk]);
 
   return (
-    <ProjectProvider projectId={process.env.EXPO_PUBLIC_REPLYKE_PROJECT_ID!}>
-      <AuthProvider signedToken={undefined}>
-        <TokenManager expoManaged />
-        <AppNotificationsProvider
-          notificationTemplates={{
-            entityComment: {
-              title: `$userName commented on your post "$entityContent"`,
-            },
-            commentReply: {
-              title: `$userName replied to your comment on "$entityContent"`,
-            },
-            commentMention: {
-              title: `$userName mentioned you in their comment on "$entityContent"`,
-            },
-            entityUpvote: {
-              title: `$userName upvoted your comment on "$entityContent"`,
-            },
-            commentUpvote: {
-              title: `$userName upvoted your comment on "$entityContent"`,
-            },
-          }}
-        >
-          <SheetManagerProvider>{children}</SheetManagerProvider>
-        </AppNotificationsProvider>
-      </AuthProvider>
-    </ProjectProvider>
+    <ReplykeProvider
+      projectId={process.env.EXPO_PUBLIC_REPLYKE_PROJECT_ID!}
+      signedToken={undefined}
+    >
+      <TokenManager expoManaged />
+      <AppNotificationsProvider
+        notificationTemplates={{
+          entityComment: {
+            title: `$userName commented on your post "$entityContent"`,
+          },
+          commentReply: {
+            title: `$userName replied to your comment on "$entityContent"`,
+          },
+          commentMention: {
+            title: `$userName mentioned you in their comment on "$entityContent"`,
+          },
+          entityUpvote: {
+            title: `$userName upvoted your comment on "$entityContent"`,
+          },
+          commentUpvote: {
+            title: `$userName upvoted your comment on "$entityContent"`,
+          },
+        }}
+      >
+        <SheetManagerProvider>{children}</SheetManagerProvider>
+      </AppNotificationsProvider>
+    </ReplykeProvider>
   );
 }
 
