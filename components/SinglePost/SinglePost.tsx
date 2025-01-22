@@ -1,5 +1,5 @@
-import { Pressable, Animated } from "react-native";
-import React, { useState } from "react";
+import { Pressable, Animated, Text, View } from "react-native";
+import React from "react";
 import { useEntity, useUser } from "replyke-rn";
 import useSheetManager from "../../hooks/useSheetManager";
 import PostActionsBottom from "./PostActionsBottom";
@@ -70,6 +70,13 @@ const SinglePost = ({
             opacity,
           }}
         >
+
+          {/* Caption */}
+          <View className="px-6 py-4 gap-2">
+            <Text className="text-white">{entity.title}</Text>
+          </View>
+
+          {/* Actions */}
           <PostActionsBottom />
         </Animated.View>
       </Pressable>

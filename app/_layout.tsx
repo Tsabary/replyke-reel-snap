@@ -58,6 +58,7 @@ export default function RootLayout() {
         > */}
         <ContextProvider>
           <Stack
+          initialRouteName="(tabs)"
             screenOptions={{
               gestureEnabled: true, // Enable swipe gestures
               animation: "default",

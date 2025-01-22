@@ -33,7 +33,6 @@ const PostActionsBottom = () => {
     <LinearGradient
       // Background Linear Gradient
       colors={["transparent", "rgba(0,0,0,0.8)"]}
-      className="absolute left-0 bottom-0 right-0"
     >
       <View className="px-6 py-4 gap-2">
         <PostCommentsTeaser />
