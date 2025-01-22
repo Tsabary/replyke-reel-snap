@@ -46,27 +46,8 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
       signedToken={undefined}
     >
       <TokenManager expoManaged />
-      <AppNotificationsProvider
-        notificationTemplates={{
-          entityComment: {
-            title: `$userName commented on your post "$entityContent"`,
-          },
-          commentReply: {
-            title: `$userName replied to your comment on "$entityContent"`,
-          },
-          commentMention: {
-            title: `$userName mentioned you in their comment on "$entityContent"`,
-          },
-          entityUpvote: {
-            title: `$userName upvoted your comment on "$entityContent"`,
-          },
-          commentUpvote: {
-            title: `$userName upvoted your comment on "$entityContent"`,
-          },
-        }}
-      >
-        <SheetManagerProvider>{children}</SheetManagerProvider>
-      </AppNotificationsProvider>
+
+      <SheetManagerProvider>{children}</SheetManagerProvider>
     </ReplykeProvider>
   );
 }

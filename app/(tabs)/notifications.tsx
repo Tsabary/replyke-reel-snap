@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { useAppNotifications, useAuth, useUser } from "replyke-rn";
+import { AppNotificationsProvider, useAppNotifications, useAuth, useUser } from "replyke-rn";
 import { useCallback, useMemo, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Redirect } from "expo-router";
@@ -112,5 +112,27 @@ export default () => {
   if (loadingInitial) return null;
   if (!user) return <Redirect href="/authenticate" />;
 
-  return <Notifications />;
+  return (
+    <AppNotificationsProvider
+      notificationTemplates={{
+        entityComment: {
+          title: `$userName commented on your post "$entityContent"`,
+        },
+        commentReply: {
+          title: `$userName replied to your comment on "$entityContent"`,
+        },
+        commentMention: {
+          title: `$userName mentioned you in their comment on "$entityContent"`,
+        },
+        entityUpvote: {
+          title: `$userName upvoted your comment on "$entityContent"`,
+        },
+        commentUpvote: {
+          title: `$userName upvoted your comment on "$entityContent"`,
+        },
+      }}
+    >
+      <Notifications />
+    </AppNotificationsProvider>
+  );
 };

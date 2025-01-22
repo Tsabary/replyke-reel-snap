@@ -48,7 +48,6 @@ const Home = () => {
   const screenCount = feedTitles.length;
 
   // -- GESTURE HANDLER (Swipe) --
-
   const handleGestureEvent = (event: PanGestureHandlerGestureEvent) => {
     const minTranslateX = -(screenCount - 1) * SCREEN_WIDTH;
     const maxTranslateX = 0;
