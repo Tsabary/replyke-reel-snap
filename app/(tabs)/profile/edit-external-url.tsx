@@ -6,7 +6,7 @@ import {
   TextInput,
   View,
 } from "react-native";
-import { useUser } from "replyke-rn";
+import { useUser } from "replyke-expo";
 import validator from "validator";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";

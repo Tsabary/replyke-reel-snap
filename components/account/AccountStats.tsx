@@ -1,6 +1,6 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { UserLean } from "replyke-rn";
+import { UserLean } from "replyke-expo";
 import { formatNumber } from "../../utils/formatNumber";
 
 const AccountStats = ({

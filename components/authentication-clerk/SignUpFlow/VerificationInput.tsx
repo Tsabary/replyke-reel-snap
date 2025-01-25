@@ -6,7 +6,7 @@ import React, {
   useImperativeHandle,
   useEffect,
 } from "react";
-import { handleError } from "replyke-rn";
+import { handleError } from "replyke-expo";
 import { SetActive, SignUpResource } from "@clerk/types";
 
 import CustomButton from "../../ui/CustomButton";

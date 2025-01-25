@@ -5,7 +5,7 @@ import {
   FromNow,
   useAppNotifications,
   UserAvatar,
-} from "replyke-rn";
+} from "replyke-expo";
 import { useState } from "react";
 import { useRouter } from "expo-router";
 

@@ -1,4 +1,4 @@
-import { FeedProvider, FeedSortByOptions, UserLean } from "replyke-rn";
+import { FeedProvider, FeedSortByOptions, UserLean } from "replyke-expo";
 import Feed from "./Feed";
 import { Text, View } from "react-native";
 

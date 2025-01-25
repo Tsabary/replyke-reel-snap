@@ -10,7 +10,7 @@ import {
   TextInput,
   FlatList,
 } from "react-native";
-import { useLists } from "replyke-rn";
+import { useLists } from "replyke-expo";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,

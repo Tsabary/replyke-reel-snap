@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { AppNotificationsProvider, useAppNotifications, useAuth, useUser } from "replyke-rn";
+import { AppNotificationsProvider, useAppNotifications, useAuth, useUser } from "replyke-expo";
 import { useCallback, useMemo, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Redirect } from "expo-router";

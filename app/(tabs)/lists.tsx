@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { ListsProvider, useAuth, useLists, useUser } from "replyke-rn";
+import { ListsProvider, useAuth, useLists, useUser } from "replyke-expo";
 import { FlatList, Pressable, Text, View } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
 import { StatusBar } from "expo-status-bar";

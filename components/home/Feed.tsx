@@ -1,5 +1,5 @@
 import React, { useCallback, useRef, useState } from "react";
-import { EntityProvider, useFeed } from "replyke-rn";
+import { EntityProvider, useFeed } from "replyke-expo";
 import Skeleton from "../shared/Skeleton";
 import { Animated, RefreshControl, View, Text } from "react-native";
 import { SinglePost } from "../SinglePost";

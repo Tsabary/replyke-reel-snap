@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React, { useState } from "react";
-import { useCreateEntity, useUploadFile, useUser } from "replyke-rn";
+import { useCreateEntity, useUploadFile, useUser } from "replyke-expo";
 import { useRouter } from "expo-router";
 import { CameraCapturedPicture } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";

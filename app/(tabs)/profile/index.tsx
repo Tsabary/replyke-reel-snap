@@ -12,7 +12,7 @@ import {
   useFetchUserFollowingCount,
   UserAvatar,
   useAuth,
-} from "replyke-rn";
+} from "replyke-expo";
 
 import AccountStats from "../../../components/account/AccountStats";
 import AccountSkeletons from "../../../components/account/AccountSkeletons";

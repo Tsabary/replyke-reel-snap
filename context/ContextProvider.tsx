@@ -2,7 +2,7 @@ import {
   AppNotificationsProvider,
   ReplykeProvider,
   TokenManager,
-} from "replyke-rn";
+} from "replyke-expo";
 // import axios from "axios";
 // import {
 //   useUser as useUserClerk,

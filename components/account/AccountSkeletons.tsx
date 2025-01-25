@@ -1,6 +1,6 @@
 import { View } from "react-native";
 import React from "react";
-import { Skeleton } from "replyke-rn";
+import { Skeleton } from "replyke-expo";
 
 const AccountSkeletons = () => {
   return (

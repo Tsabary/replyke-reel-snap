@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from "react";
 import { View, Text, Pressable } from "react-native";
-import { useFeed } from "replyke-rn";
+import { useFeed } from "replyke-expo";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,

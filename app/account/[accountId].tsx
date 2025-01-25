@@ -14,7 +14,7 @@ import {
   UserAvatar,
   UserLean,
   useUser,
-} from "replyke-rn";
+} from "replyke-expo";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 import AccountStats from "../../components/account/AccountStats";

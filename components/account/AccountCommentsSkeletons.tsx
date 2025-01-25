@@ -1,6 +1,6 @@
 import React from "react";
 import { View, FlatList } from "react-native";
-import { Skeleton } from "replyke-rn";
+import { Skeleton } from "replyke-expo";
 
 const AccountCommentsSkeletons = () => {
   return (

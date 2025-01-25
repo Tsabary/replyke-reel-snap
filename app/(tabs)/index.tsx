@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Dimensions, View } from "react-native";
-import { FeedProvider, useUser } from "replyke-rn";
+import { FeedProvider, useUser } from "replyke-expo";
 import {
   PanGestureHandler,
   PanGestureHandlerGestureEvent,

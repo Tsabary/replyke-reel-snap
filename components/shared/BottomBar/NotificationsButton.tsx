@@ -5,7 +5,7 @@ import {
   useAppNotifications,
   useCountUnreadNotifications,
   useUser,
-} from "replyke-rn";
+} from "replyke-expo";
 import Entypo from "@expo/vector-icons/Entypo";
 
 const NotificationsButton = ({

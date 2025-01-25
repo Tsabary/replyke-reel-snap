@@ -17,8 +17,7 @@ import {
   useSocialComments,
   useSocialStyle,
   UseSocialStyleProps,
-  useUser,
-} from "replyke-rn";
+} from "replyke-expo";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,
@@ -46,7 +45,7 @@ const CommentsComponents = memo(
       () => ({
         commentProps: {},
         newCommentFormProps: {
-          verticalPadding: 24,
+          verticalPadding: 16,
           paddingLeft: 24,
           paddingRight: 24,
         },
@@ -99,7 +98,7 @@ const CommentsComponents = memo(
 
     return (
       <CommentSectionProvider>
-        <BottomSheetView className="flex-1 h-full">
+        <BottomSheetView className="relative flex-1 h-full">
           <View className="flex-row gap-2 px-4 items-center mb-2">
             <View className="flex-1" />
             <SortByButton
@@ -131,7 +130,9 @@ const CommentsComponents = memo(
           </View>
 
           <CommentsFeed />
-          <NewCommentForm ref={commentFormRef} />
+          {/* <View className="border-t-hairline border-gray-300"> */}
+            <NewCommentForm ref={commentFormRef} />
+          {/* </View> */}
         </BottomSheetView>
       </CommentSectionProvider>
     );
@@ -142,7 +143,6 @@ const CommentsComponents = memo(
 );
 
 const CommentSectionSheet = () => {
-  const { user } = useUser();
   const {
     commentSetionSheetRef,
     commmentsEntityId,

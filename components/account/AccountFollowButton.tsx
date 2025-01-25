@@ -1,6 +1,6 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { handleError, useFollowUser } from "replyke-rn";
+import { handleError, useFollowUser } from "replyke-expo";
 import { useLocalSearchParams } from "expo-router";
 
 const AccountFollowButton = ({

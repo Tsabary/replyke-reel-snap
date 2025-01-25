@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Pressable, Text, View } from "react-native";
-import { useUser, UserAvatar } from "replyke-rn";
+import { useUser, UserAvatar } from "replyke-expo";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { useRouter } from "expo-router";

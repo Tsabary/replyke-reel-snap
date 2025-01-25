@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "react-native";
-import { UserLean } from "replyke-rn";
+import { UserLean } from "replyke-expo";
 
 function AccountName({ account }: { account: UserLean | undefined }) {
   if (account?.name) {

@@ -1,7 +1,7 @@
 import "react-native-reanimated";
 import "../global.css";
 import { useEffect } from "react";
-import { ListsProvider } from "replyke-rn";
+import { ListsProvider } from "replyke-expo";
 import Constants from "expo-constants";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";

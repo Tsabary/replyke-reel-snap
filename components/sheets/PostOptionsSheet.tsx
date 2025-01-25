@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from "react";
 import { View, Text, Pressable } from "react-native";
-import { useUser } from "replyke-rn";
+import { useUser } from "replyke-expo";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,

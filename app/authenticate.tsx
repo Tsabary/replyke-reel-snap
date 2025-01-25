@@ -5,7 +5,7 @@ import Animated, {
   useAnimatedStyle,
   withTiming,
 } from "react-native-reanimated";
-import { useUser } from "replyke-rn";
+import { useUser } from "replyke-expo";
 import { Redirect } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { SafeAreaView } from "react-native-safe-area-context";
