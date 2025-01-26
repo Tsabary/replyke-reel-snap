@@ -20,9 +20,7 @@ const SinglePost = ({
   const { entity } = useEntity();
   const { openPostOptionsSheet, openOwnerPostOptionsSheet } = useSheetManager();
 
-  const metadata = entity?.metadata;
-
-  if (!metadata) return null;
+  if (!entity) return null;
 
   const translateY = scrollY.interpolate({
     inputRange: [
@@ -68,7 +66,6 @@ const SinglePost = ({
             opacity,
           }}
         >
-
           {/* Caption */}
           <View className="px-6 py-4 gap-2">
             <Text className="text-white">{entity.title}</Text>
