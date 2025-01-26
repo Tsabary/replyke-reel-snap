@@ -42,29 +42,23 @@ const FinalizePost = ({
 
     try {
       // Resize to ensure neither side exceeds 800
-      const resizedUri = await resizeIfNeeded(imageUri);
-
-      // 2) Extract the file extension from the original URI or simply use JPEG
-      //    since we forced JPEG above.
-      //    But if you want to preserve the original extension, keep that logic.
-      //    For simplicity, let's assume JPEG here:
-      const fileExtension = "jpg";
+      const { uri, extension } = await resizeIfNeeded(imageUri);
 
       // 3) Prepare the file for upload (in React Native style)
       const rnFile = {
-        uri: resizedUri,
-        type: `image/${fileExtension}`,
-        name: `${Date.now()}.${fileExtension}`,
+        uri: uri,
+        type: `image/${extension}`,
+        name: `${Date.now()}.${extension}`,
       };
 
       // 4) Upload the resized file to your storage:
       const pathParts = ["posts", user.id];
-      const uploadResponse = await uploadFile(rnFile, pathParts, rnFile.name);
+      const uploadResponse = await uploadFile(rnFile, pathParts);
 
       if (uploadResponse) {
         await createEntity({
           title: caption,
-          media: [{ ...uploadResponse, fileExtension }],
+          media: [{ ...uploadResponse, extension }],
         });
       }
 
