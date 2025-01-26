@@ -84,10 +84,29 @@ Learn more about what you can achieve with Replyke at [replyke.com](https://repl
 
 ## Getting Started
 
-1.  Head over to [replyke.com](https://replyke.com/) and create an account.
-2.  Set up a new project in Replyke.
-3.  Clone this repository and connect it to your Replyke project.
-4.  Customize the front end as needed and start building your app!
+1.  **Clone this repository**  
+    Clone the boilerplate to your local machine:
+    
+    ```bash
+    git clone <repository_url> cd <repository_name>
+    ``` 
+    
+2.  **Create a Replyke account**  
+    Head over to [replyke.com](https://dashboard.replyke.com) and create an account.
+    
+3.  **Set up a new project**  
+    After logging into your Replyke account, create a new project.
+    
+4.  **Copy your Project ID**  
+    Once the project is created, you'll be provided with a **Project ID**. Copy this ID.
+    
+5.  **Set up your `.env` file**  
+    In the root of your cloned project, create a `.env` file (if it doesn't exist). Add the following line, replacing `YOUR_PROJECT_ID` with the Project ID you copied earlier:
+    
+    `EXPO_PUBLIC_REPLYKE_PROJECT_ID=YOUR_PROJECT_ID` 
+    
+6.  **Customize and build your app**  
+    Customize the front end as needed and start building your app!
 
 ----------
 
