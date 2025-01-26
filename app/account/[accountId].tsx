@@ -23,7 +23,7 @@ import AccountBio from "../../components/account/AccountBio";
 import AccountSkeletons from "../../components/account/AccountSkeletons";
 import AccountUsername from "../../components/account/AccountUsername";
 import AccountHeaderUnfollowButton from "../../components/account/AccountHeaderUnfollowButton";
-import { SinglePost } from "../../components/SinglePost";
+import { SinglePost } from "../../components/shared/SinglePost";
 import AccountExternalUrl from "../../components/account/AccountExternalUrl";
 import AccountName from "../../components/account/AccountName";
 

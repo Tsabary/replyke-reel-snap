@@ -7,7 +7,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
-import useSheetManager from "../../hooks/useSheetManager";
+import useSheetManager from "../../../hooks/useSheetManager";
 import PostFollowButton from "./PostFollowButton";
 
 function PostActionsHover() {

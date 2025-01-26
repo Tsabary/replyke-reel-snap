@@ -16,7 +16,7 @@ import {
 
 import AccountStats from "../../../components/account/AccountStats";
 import AccountSkeletons from "../../../components/account/AccountSkeletons";
-import { SinglePost } from "../../../components/SinglePost";
+import { SinglePost } from "../../../components/shared/SinglePost";
 import ProfileHeader from "../../../components/profile/ProfileHeader";
 import ProfileUsername from "../../../components/profile/ProfileUsername";
 import ProfileBio from "../../../components/profile/ProfileBio";

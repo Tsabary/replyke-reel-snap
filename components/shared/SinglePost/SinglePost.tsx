@@ -1,7 +1,7 @@
 import { Pressable, Animated, Text, View } from "react-native";
 import React from "react";
 import { useEntity, useUser } from "replyke-expo";
-import useSheetManager from "../../hooks/useSheetManager";
+import useSheetManager from "../../../hooks/useSheetManager";
 import PostActionsBottom from "./PostActionsBottom";
 import PostContent from "./PostContent";
 
@@ -48,8 +48,6 @@ const SinglePost = ({
     <>
       <Pressable
         onLongPress={() => {
-          console.log("entity.user?.id", entity.user?.id);
-          console.log("user?.id", user?.id);
           entity.user?.id === user?.id
             ? openOwnerPostOptionsSheet?.(entity)
             : openPostOptionsSheet?.(entity);

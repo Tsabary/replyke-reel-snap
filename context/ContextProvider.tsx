@@ -45,7 +45,7 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
       projectId={process.env.EXPO_PUBLIC_REPLYKE_PROJECT_ID!}
       signedToken={undefined}
     >
-      <TokenManager expoManaged />
+      <TokenManager />
 
       <SheetManagerProvider>{children}</SheetManagerProvider>
     </ReplykeProvider>

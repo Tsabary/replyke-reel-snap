@@ -8,8 +8,8 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
-import useSheetManager from "../../hooks/useSheetManager";
-import { formatNumber } from "../../utils/formatNumber";
+import useSheetManager from "../../../hooks/useSheetManager";
+import { formatNumber } from "../../../utils/formatNumber";
 import PostFollowButton from "./PostFollowButton";
 import PostCommentsTeaser from "./PostCommentsTeaser";
 

@@ -11,7 +11,7 @@ import {
 import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { showMessage } from "react-native-flash-message";
-import { cn } from "../../utils/cn";
+import { cn } from "../../../utils/cn";
 
 const PostFollowButton = ({
   positionClassname,

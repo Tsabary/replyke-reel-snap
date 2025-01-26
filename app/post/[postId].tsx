@@ -6,7 +6,7 @@ import { Entity, EntityProvider, useFetchSingleEntity } from "replyke-expo";
 import { StatusBar } from "expo-status-bar";
 
 import useSheetManager from "../../hooks/useSheetManager";
-import { SinglePost } from "../../components/SinglePost";
+import { SinglePost } from "../../components/shared/SinglePost";
 
 function PostScreen() {
   const { postId, commentId } = useLocalSearchParams();
