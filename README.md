@@ -124,7 +124,7 @@ This project is open-source under the MIT license.
 
 ## Support
 
-For questions or issues, join the Replyke community or contact support at our [Discord Server](https://discord.gg/cb5CfNZ2/).
+For questions or issues, join the Replyke community or contact support at our [Discord Server](https://discord.gg/REKxnCJzPz).
 
 ----------
 
