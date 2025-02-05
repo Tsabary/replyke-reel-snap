@@ -1,6 +1,6 @@
-import { Image } from "react-native";
 import React from "react";
-import { Entity } from "replyke-expo";
+import { Image } from "react-native";
+import { Entity } from "@replyke/expo";
 
 const PostContent = ({
   entity,

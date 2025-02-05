@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import {
   ActivityIndicator,
   RefreshControl,
@@ -6,8 +6,12 @@ import {
   Text,
   View,
 } from "react-native";
-import { AppNotificationsProvider, useAppNotifications, useAuth, useUser } from "replyke-expo";
-import { useCallback, useMemo, useState } from "react";
+import {
+  AppNotificationsProvider,
+  useAppNotifications,
+  useAuth,
+  useUser,
+} from "@replyke/expo";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Redirect } from "expo-router";
 import { StatusBar } from "expo-status-bar";

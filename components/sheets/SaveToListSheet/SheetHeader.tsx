@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
-import { handleError, useLists } from "replyke-expo";
+import { handleError, useLists } from "@replyke/expo";
 import { cn } from "../../../utils/cn";
 
 const styles = {

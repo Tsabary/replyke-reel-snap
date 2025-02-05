@@ -1,5 +1,5 @@
-import { Text, Pressable } from "react-native";
 import React from "react";
+import { Text, Pressable } from "react-native";
 import { useRouter } from "expo-router";
 
 const ContinueWithoutAccount = () => {

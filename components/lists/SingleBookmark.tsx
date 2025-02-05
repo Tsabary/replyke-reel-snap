@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, Pressable } from "react-native";
-import { Entity } from "replyke-expo";
+import { Entity } from "@replyke/expo";
 import { SvgUri } from "react-native-svg";
 import { useRouter } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";

@@ -1,6 +1,6 @@
-import { Text, TouchableOpacity } from "react-native";
 import React from "react";
-import { getUserName, useEntity } from "replyke-expo";
+import { Text, TouchableOpacity } from "react-native";
+import { getUserName, useEntity } from "@replyke/expo";
 import useSheetManager from "../../../hooks/useSheetManager";
 
 const PostCommentsTeaser = () => {

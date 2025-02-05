@@ -2,7 +2,7 @@ import { Pressable, Text, View } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Link, Redirect, useRouter } from "expo-router";
-import { useAuth as useAuthReplyke, useUser } from "replyke-expo";
+import { useAuth as useAuthReplyke, useUser } from "@replyke/expo";
 import { showMessage } from "react-native-flash-message";
 import { StatusBar } from "expo-status-bar";
 // import { useAuth as useAuthClerk } from "@clerk/clerk-expo";

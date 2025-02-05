@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { View } from "react-native";
 import { useCameraPermissions, CameraCapturedPicture } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 import PhotoCapture from "../components/create-post/PhotoCapture";
 import PhotoPreview from "../components/create-post/PhotoPreview";
 import RequestPermission from "../components/create-post/RequestPermission";
 import FinalizePost from "../components/create-post/FinalizePost";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function CreatePostScreen() {
   const [permission, requestPermission] = useCameraPermissions();

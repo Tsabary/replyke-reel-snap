@@ -1,5 +1,5 @@
-import { View, Text, Platform } from "react-native";
 import React from "react";
+import { View, Text, Platform } from "react-native";
 import GoogleLogin from "./GoogleLogin";
 import AppleLogin from "./AppleLogin";
 import FacebookLogin from "./FacebookLogin";

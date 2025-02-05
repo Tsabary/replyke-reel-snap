@@ -1,7 +1,8 @@
-import { View, Text, Pressable, TouchableOpacity } from "react-native";
 import React, { useEffect } from "react";
+import { View, Text, Pressable, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { useUser, useEntity, useIsEntitySaved, UserAvatar } from "replyke-expo";
+import { useUser, useEntity, useIsEntitySaved } from "@replyke/expo";
+import { UserAvatar } from "@replyke/ui-core-react-native";
 import { useRouter } from "expo-router";
 import { showMessage } from "react-native-flash-message";
 import FontAwesome from "@expo/vector-icons/FontAwesome";

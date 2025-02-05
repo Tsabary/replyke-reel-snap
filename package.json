@@ -20,6 +20,9 @@
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/drawer": "^7.0.0",
     "@react-navigation/native": "^7.0.0",
+    "@replyke/comments-social-react-native": "^4.0.5",
+    "@replyke/expo": "^4.0.3",
+    "@replyke/ui-core-react-native": "^4.0.5",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -52,7 +55,6 @@
     "react-native-screens": "~4.4.0",
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
-    "replyke-expo": "^4.0.10",
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "^3.4.16",
     "validator": "^13.12.0"

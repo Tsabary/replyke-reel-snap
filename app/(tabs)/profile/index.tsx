@@ -10,9 +10,9 @@ import {
   useFeedData,
   useFetchUserFollowersCount,
   useFetchUserFollowingCount,
-  UserAvatar,
   useAuth,
-} from "replyke-expo";
+} from "@replyke/expo";
+import { UserAvatar } from "@replyke/ui-core-react-native";
 
 import AccountStats from "../../../components/account/AccountStats";
 import AccountSkeletons from "../../../components/account/AccountSkeletons";
@@ -140,7 +140,9 @@ const Profile = () => {
             scrollEventThrottle={16}
             ListEmptyComponent={
               <View className="flex-1">
-                <Text className="text-center text-3xl font-bold text-gray-300 mt-6">No contributions yet</Text>
+                <Text className="text-center text-3xl font-bold text-gray-300 mt-6">
+                  No contributions yet
+                </Text>
               </View>
             }
             bounces={false}

@@ -8,7 +8,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import { useUser } from "replyke-expo";
+import { useUser } from "@replyke/expo";
 import { StatusBar } from "expo-status-bar";
 import { cn } from "../../../utils/cn";
 

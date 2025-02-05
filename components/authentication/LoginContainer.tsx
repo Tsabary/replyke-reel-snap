@@ -1,13 +1,13 @@
-import { View, Text, Dimensions, Keyboard } from "react-native";
 import React, { useEffect, useState } from "react";
-import LoginFlow from "./LoginFlow";
-import ContinueWithoutAccount from "./ContinueWithoutAccount";
-import LegalNotice from "./LegalNotice";
+import { View, Text, Dimensions, Keyboard } from "react-native";
 import Animated, {
   useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from "react-native-reanimated";
+import LoginFlow from "./LoginFlow";
+import ContinueWithoutAccount from "./ContinueWithoutAccount";
+import LegalNotice from "./LegalNotice";
 import { cn } from "../../utils/cn";
 
 const { width } = Dimensions.get("window");

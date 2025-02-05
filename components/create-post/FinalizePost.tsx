@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   ActivityIndicator,
   Image,
@@ -7,8 +8,7 @@ import {
   View,
   TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
-import { useCreateEntity, useUploadFile, useUser } from "replyke-expo";
+import { useCreateEntity, useUploadFile, useUser } from "@replyke/expo";
 import { useRouter } from "expo-router";
 import { CameraCapturedPicture } from "expo-camera";
 import * as ImagePicker from "expo-image-picker";

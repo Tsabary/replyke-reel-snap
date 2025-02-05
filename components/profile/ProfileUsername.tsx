@@ -1,6 +1,6 @@
-import { View, Text, Pressable } from "react-native";
 import React from "react";
-import { useUser } from "replyke-expo";
+import { View, Text, Pressable } from "react-native";
+import { useUser } from "@replyke/expo";
 import { useRouter } from "expo-router";
 import AccountUsername from "../account/AccountUsername";
 

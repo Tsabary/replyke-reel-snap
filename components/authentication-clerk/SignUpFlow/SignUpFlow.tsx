@@ -6,7 +6,7 @@ import React, {
   useState,
 } from "react";
 import { Animated, View, Dimensions, TextInput } from "react-native";
-import { handleError } from "replyke-expo";
+import { handleError } from "@replyke/expo";
 import { useForm } from "react-hook-form";
 import { useSignUp } from "@clerk/clerk-expo";
 

@@ -1,9 +1,8 @@
-import React, { createContext, useState } from "react";
 import { useRef } from "react";
-import { Entity } from "replyke-expo";
+import React, { createContext, useState } from "react";
+import { Entity } from "@replyke/expo";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { BottomSheetMethods } from "@gorhom/bottom-sheet/lib/typescript/types";
-import OwnerPostOptionsSheet from "../components/sheets/OwnerPostOptionsSheet";
 
 type SheetManagerContext = {
   accountSheetRef: React.RefObject<BottomSheetMethods>;

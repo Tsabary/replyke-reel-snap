@@ -11,10 +11,10 @@ import {
   useFetchSingleUser,
   useFetchUserFollowersCount,
   useFetchUserFollowingCount,
-  UserAvatar,
   UserLean,
   useUser,
-} from "replyke-expo";
+} from "@replyke/expo";
+import { UserAvatar } from "@replyke/ui-core-react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 import AccountStats from "../../components/account/AccountStats";

@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 import { Animated, RefreshControl, View, Text } from "react-native";
-import { EntityProvider, useFeed } from "replyke-expo";
+import { EntityProvider, useFeed } from "@replyke/expo";
 import Skeleton from "../shared/Skeleton";
 import { SinglePost } from "../shared/SinglePost";
 

@@ -1,8 +1,4 @@
-import {
-  AppNotificationsProvider,
-  ReplykeProvider,
-  TokenManager,
-} from "replyke-expo";
+import { ReplykeProvider } from "@replyke/expo";
 // import axios from "axios";
 // import {
 //   useUser as useUserClerk,
@@ -45,8 +41,6 @@ function ContextProvider({ children }: { children: React.ReactNode }) {
       projectId={process.env.EXPO_PUBLIC_REPLYKE_PROJECT_ID!}
       signedToken={undefined}
     >
-      <TokenManager />
-
       <SheetManagerProvider>{children}</SheetManagerProvider>
     </ReplykeProvider>
   );

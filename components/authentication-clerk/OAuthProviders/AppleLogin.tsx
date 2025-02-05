@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Text, Pressable, Image } from "react-native";
-import { handleError } from "replyke-expo";
+import { handleError } from "@replyke/expo";
 import { useOAuth } from "@clerk/clerk-expo";
 import * as Linking from "expo-linking";
 

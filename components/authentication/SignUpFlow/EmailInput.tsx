@@ -1,5 +1,5 @@
-import { View } from "react-native";
 import React from "react";
+import { View } from "react-native";
 import { isEmail } from "validator";
 import { Control, FieldErrors, UseFormSetError } from "react-hook-form";
 

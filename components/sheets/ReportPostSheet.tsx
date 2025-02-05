@@ -6,7 +6,7 @@ import {
   reportReasons,
   useUser,
   useSubmitReport,
-} from "replyke-expo";
+} from "@replyke/expo";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,

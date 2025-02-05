@@ -1,7 +1,7 @@
 import { View, Text, TouchableWithoutFeedback } from "react-native";
 import React from "react";
 import * as WebBrowser from "expo-web-browser";
-import { UserLean } from "replyke-expo";
+import { UserLean } from "@replyke/expo";
 import Feather from "@expo/vector-icons/Feather";
 
 const AccountExternalUrl = ({ account }: { account: UserLean }) => {

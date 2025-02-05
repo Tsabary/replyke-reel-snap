@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Pressable, Text, View } from "react-native";
 import {
   handleError,
-  useAppNotifications,
   useCountUnreadNotifications,
   useUser,
-} from "replyke-expo";
+} from "@replyke/expo";
 import Entypo from "@expo/vector-icons/Entypo";
 
 const NotificationsButton = ({

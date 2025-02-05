@@ -1,7 +1,7 @@
 import "react-native-reanimated";
 import "../global.css";
 import { useEffect } from "react";
-import { ListsProvider } from "replyke-expo";
+import { ListsProvider } from "@replyke/expo";
 import Constants from "expo-constants";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
@@ -10,6 +10,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import FlashMessage from "react-native-flash-message";
 import { StatusBar } from "expo-status-bar";
+// import { ClerkProvider } from "@clerk/clerk-expo";
 
 import ContextProvider from "../context/ContextProvider";
 import { SaveToListSheet } from "../components/sheets/SaveToListSheet";
@@ -17,7 +18,6 @@ import ReportPostSheet from "../components/sheets/ReportPostSheet";
 import CommentSectionSheet from "../components/sheets/CommentSectionSheet";
 import PostOptionsSheet from "../components/sheets/PostOptionsSheet";
 import SharePostSheet from "../components/sheets/SharePostSheet";
-// import { ClerkProvider } from "@clerk/clerk-expo";
 // import { tokenCache } from "../cache";
 import OwnerPostOptionsSheet from "../components/sheets/OwnerPostOptionsSheet";
 

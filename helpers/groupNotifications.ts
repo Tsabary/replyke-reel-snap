@@ -1,5 +1,5 @@
 import { isToday, isYesterday, subDays } from "date-fns";
-import { AppNotification } from "replyke-expo";
+import { AppNotification } from "@replyke/expo";
 
 export function groupNotifications(
   notifications: AppNotification.UnifiedAppNotification[]

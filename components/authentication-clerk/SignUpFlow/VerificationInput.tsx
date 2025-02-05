@@ -1,4 +1,3 @@
-import { View, TextInput, Text } from "react-native";
 import React, {
   useState,
   useRef,
@@ -6,7 +5,8 @@ import React, {
   useImperativeHandle,
   useEffect,
 } from "react";
-import { handleError } from "replyke-expo";
+import { View, TextInput, Text } from "react-native";
+import { handleError } from "@replyke/expo";
 import { SetActive, SignUpResource } from "@clerk/types";
 
 import CustomButton from "../../ui/CustomButton";

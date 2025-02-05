@@ -1,6 +1,6 @@
-import { Pressable } from "react-native";
 import React from "react";
-import { handleError, useUnfollowUser } from "replyke-expo";
+import { Pressable } from "react-native";
+import { handleError, useUnfollowUser } from "@replyke/expo";
 import { useLocalSearchParams } from "expo-router";
 import Feather from "@expo/vector-icons/Feather";
 

@@ -1,6 +1,6 @@
-import { FeedProvider, FeedSortByOptions, UserLean } from "replyke-expo";
-import Feed from "./Feed";
 import { Text, View } from "react-native";
+import { FeedProvider, FeedSortByOptions, UserLean } from "@replyke/expo";
+import Feed from "./Feed";
 
 export const feedTitles = ["Following", "Trending", "Fresh"];
 // Define your feeds

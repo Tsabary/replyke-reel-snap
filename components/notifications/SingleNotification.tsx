@@ -1,12 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Pressable, Text, View } from "react-native";
-import {
-  AppNotification,
-  FromNow,
-  useAppNotifications,
-  UserAvatar,
-} from "replyke-expo";
-import { useState } from "react";
+import { AppNotification, useAppNotifications } from "@replyke/expo";
+import { FromNow, UserAvatar } from "@replyke/ui-core-react-native";
 import { useRouter } from "expo-router";
 
 import { cn } from "../../utils/cn";

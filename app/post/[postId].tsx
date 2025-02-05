@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Animated, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Entity, EntityProvider, useFetchSingleEntity } from "replyke-expo";
+import { Entity, EntityProvider, useFetchSingleEntity } from "@replyke/expo";
 import { StatusBar } from "expo-status-bar";
 
 import useSheetManager from "../../hooks/useSheetManager";

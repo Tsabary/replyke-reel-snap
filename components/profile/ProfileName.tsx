@@ -1,6 +1,6 @@
-import { Text, Pressable } from "react-native";
 import React from "react";
-import { useUser } from "replyke-expo";
+import { Text, Pressable } from "react-native";
+import { useUser } from "@replyke/expo";
 import { useRouter } from "expo-router";
 import AccountName from "../account/AccountName";
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { View, TouchableOpacity, Text, Pressable } from "react-native";
-import { useUser, useEntity, useIsEntitySaved, UserAvatar } from "replyke-expo";
+import { useUser, useEntity, useIsEntitySaved } from "@replyke/expo";
+import { UserAvatar } from "@replyke/ui-core-react-native";
 import { showMessage } from "react-native-flash-message";
 import { useRouter } from "expo-router";
 import FontAwesome from "@expo/vector-icons/FontAwesome";

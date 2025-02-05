@@ -1,5 +1,5 @@
-import { Text, TextInput, View } from "react-native";
 import React, { forwardRef, useState } from "react";
+import { Text, TextInput, View } from "react-native";
 import { isStrongPassword } from "validator";
 import { Control, FieldErrors, UseFormSetError } from "react-hook-form";
 import AntDesign from "@expo/vector-icons/AntDesign";
