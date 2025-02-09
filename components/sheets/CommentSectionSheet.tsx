@@ -43,7 +43,6 @@ const CommentsComponents = memo(
       useSheetManager();
     const customStyles = useMemo<Partial<UseSocialStyleProps>>(
       () => ({
-        commentProps: {},
         newCommentFormProps: {
           verticalPadding: 16,
           paddingLeft: 24,
