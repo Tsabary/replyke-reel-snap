@@ -13,13 +13,13 @@ import { StatusBar } from "expo-status-bar";
 // import { ClerkProvider } from "@clerk/clerk-expo";
 
 import ContextProvider from "../context/ContextProvider";
-import { SaveToListSheet } from "../components/sheets/SaveToListSheet";
+import SaveToListSheet from "../components/sheets/SaveToListSheet";
 import ReportPostSheet from "../components/sheets/ReportPostSheet";
 import CommentSectionSheet from "../components/sheets/CommentSectionSheet";
 import PostOptionsSheet from "../components/sheets/PostOptionsSheet";
 import SharePostSheet from "../components/sheets/SharePostSheet";
-// import { tokenCache } from "../cache";
 import OwnerPostOptionsSheet from "../components/sheets/OwnerPostOptionsSheet";
+// import { tokenCache } from "../cache";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -58,7 +58,7 @@ export default function RootLayout() {
         > */}
         <ContextProvider>
           <Stack
-          initialRouteName="(tabs)"
+            initialRouteName="(tabs)"
             screenOptions={{
               gestureEnabled: true, // Enable swipe gestures
               animation: "default",
