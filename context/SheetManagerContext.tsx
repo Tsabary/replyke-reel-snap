@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useRef } from "react";
 import { Entity } from "@replyke/expo";
 import BottomSheet from "@gorhom/bottom-sheet";
 import { BottomSheetMethods } from "@gorhom/bottom-sheet/lib/typescript/types";
@@ -13,8 +12,8 @@ type SheetManagerContext = {
   reportPostSheetRef: React.RefObject<BottomSheetMethods>;
   sharePostSheetRef: React.RefObject<BottomSheetMethods>;
 
-  openCommentSectionDrawer: (newEntityId?: string) => void;
-  closeCommentSectionDrawer: () => void;
+  openCommentSectionSheet: (newEntityId?: string) => void;
+  closeCommentSectionSheet: () => void;
 
   openSaveToListSheet: (newEntityId?: string) => void;
   closeSaveToListSheet: () => void;
@@ -37,8 +36,8 @@ type SheetManagerContext = {
   highlightedCommentId: string | null;
   setHighlightedCommentsId: React.Dispatch<React.SetStateAction<string | null>>;
 
-  listsEntityId: string | null;
-  setListsEntityId: React.Dispatch<React.SetStateAction<string | null>>;
+  collectionsEntityId: string | null;
+  setCollectionsEntityId: React.Dispatch<React.SetStateAction<string | null>>;
 
   optionsEntity: Entity | null;
   setOptionsEntity: React.Dispatch<React.SetStateAction<Entity | null>>;
@@ -76,7 +75,7 @@ export const SheetManagerProvider = ({
   >(null);
 
   // The entity the user wants to add o list
-  const [listsEntityId, setListsEntityId] = useState<string | null>(null);
+  const [collectionsEntityId, setCollectionsEntityId] = useState<string | null>(null);
 
   // The entity to which we show the options sheet
   const [optionsEntity, setOptionsEntity] = useState<Entity | null>(null);
@@ -87,24 +86,24 @@ export const SheetManagerProvider = ({
   // The entity the user wants to report
   const [sharedPost, setSharedPost] = useState<Entity | null>(null);
 
-  const openCommentSectionDrawer = (newEntityId?: string) => {
+  const openCommentSectionSheet = (newEntityId?: string) => {
     if (newEntityId) setCommentsEntityId(newEntityId);
 
     commentSetionSheetRef.current?.snapToIndex(0);
   };
 
-  const closeCommentSectionDrawer = () => {
+  const closeCommentSectionSheet = () => {
     commentSetionSheetRef.current?.close();
   };
 
   const openSaveToListSheet = (newEntityId?: string) => {
-    if (newEntityId) setListsEntityId(newEntityId);
+    if (newEntityId) setCollectionsEntityId(newEntityId);
     saveToListSheetRef.current?.snapToIndex(0);
   };
 
   const closeSaveToListSheet = () => {
     saveToListSheetRef.current?.close();
-    setListsEntityId(null);
+    setCollectionsEntityId(null);
   };
 
   const openPostOptionsSheet = (newEntity?: Entity) => {
@@ -154,8 +153,8 @@ export const SheetManagerProvider = ({
         reportPostSheetRef,
         sharePostSheetRef,
 
-        openCommentSectionDrawer,
-        closeCommentSectionDrawer,
+        openCommentSectionSheet,
+        closeCommentSectionSheet,
         openSaveToListSheet,
         closeSaveToListSheet,
         openPostOptionsSheet,
@@ -173,8 +172,8 @@ export const SheetManagerProvider = ({
         highlightedCommentId,
         setHighlightedCommentsId,
 
-        listsEntityId,
-        setListsEntityId,
+        collectionsEntityId,
+        setCollectionsEntityId,
 
         optionsEntity,
         setOptionsEntity,

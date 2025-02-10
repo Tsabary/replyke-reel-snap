@@ -5,7 +5,7 @@ import useSheetManager from "../../../hooks/useSheetManager";
 
 const PostCommentsTeaser = () => {
   const { entity } = useEntity();
-  const { openCommentSectionDrawer } = useSheetManager();
+  const { openCommentSectionSheet } = useSheetManager();
 
   if (!entity || !entity.topComment) return null;
 
@@ -13,7 +13,7 @@ const PostCommentsTeaser = () => {
     <TouchableOpacity
       className="gap-1.5 py-1"
       activeOpacity={0.6}
-      onPress={() => openCommentSectionDrawer?.(entity.id)}
+      onPress={() => openCommentSectionSheet?.(entity.id)}
     >
       {entity.topComment && (
         <Text className="text-gray-200" numberOfLines={2}>

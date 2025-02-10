@@ -10,7 +10,7 @@ import { SinglePost } from "../../components/shared/SinglePost";
 
 function PostScreen() {
   const { postId, commentId } = useLocalSearchParams();
-  const { openCommentSectionDrawer, setHighlightedCommentsId } =
+  const { openCommentSectionSheet, setHighlightedCommentsId } =
     useSheetManager();
 
   const fetchSingleEntity = useFetchSingleEntity();
@@ -34,7 +34,7 @@ function PostScreen() {
         setHighlightedCommentsId?.(commentId);
 
         timeout = setTimeout(() => {
-          openCommentSectionDrawer?.(postId);
+          openCommentSectionSheet?.(postId);
         }, 1000);
       }
     })();

@@ -13,7 +13,7 @@ import { StatusBar } from "expo-status-bar";
 // import { ClerkProvider } from "@clerk/clerk-expo";
 
 import ContextProvider from "../context/ContextProvider";
-import SaveToListSheet from "../components/sheets/SaveToListSheet";
+import CollectionsSheet from "../components/sheets/CollectionsSheet";
 import ReportPostSheet from "../components/sheets/ReportPostSheet";
 import CommentSectionSheet from "../components/sheets/CommentSectionSheet";
 import PostOptionsSheet from "../components/sheets/PostOptionsSheet";
@@ -80,7 +80,7 @@ export default function RootLayout() {
           <ReportPostSheet />
           <SharePostSheet />
           <ListsProvider>
-            <SaveToListSheet />
+            <CollectionsSheet />
           </ListsProvider>
         </ContextProvider>
         {/* </ClerkProvider> */}

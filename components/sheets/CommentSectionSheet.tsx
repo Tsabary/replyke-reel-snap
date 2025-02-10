@@ -38,7 +38,7 @@ const CommentSectionSheet = () => {
     setCommentsEntityId,
     setHighlightedCommentsId,
     highlightedCommentId,
-    closeCommentSectionDrawer,
+    closeCommentSectionSheet,
   } = useSheetManager();
 
   const snapPoints = useMemo(() => ["100%"], []);
@@ -60,12 +60,12 @@ const CommentSectionSheet = () => {
     () => ({
       currentUserClickCallback: () => {
         Keyboard.dismiss();
-        closeCommentSectionDrawer?.();
+        closeCommentSectionSheet?.();
         router.navigate("/(tabs)/profile");
       },
       otherUserClickCallback: (userId) => {
         Keyboard.dismiss();
-        closeCommentSectionDrawer?.();
+        closeCommentSectionSheet?.();
         router.navigate(`/account/${userId}`);
       },
       loginRequiredCallback: () => {

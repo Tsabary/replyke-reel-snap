@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { handleError, useLists } from "@replyke/expo";
 import { cn } from "../../../utils/cn";
+import useSheetManager from "../../../hooks/useSheetManager";
 
 const styles = {
   button: "py-2 px-4 bg-gray-300 rounded-xl",
@@ -12,14 +13,12 @@ const styles = {
   container: "flex-row py-4 px-4 items-center gap-2",
 };
 
-const SheetHeader = ({
-  entityId,
+const CollectionsSheetHeader = ({
   isCreateListView,
   setIsCreateListView,
   newListName,
   setNewListName,
 }: {
-  entityId: string | null | undefined;
   isCreateListView: boolean;
   setIsCreateListView: React.Dispatch<React.SetStateAction<boolean>>;
   newListName: string;
@@ -34,6 +33,7 @@ const SheetHeader = ({
     createList,
     updateList,
   } = useLists();
+  const { collectionsEntityId: entityId } = useSheetManager();
 
   const [isEditingName, setIsEditingName] = useState(false);
   const [updatedListName, setUpdatedListName] = useState("");
@@ -188,4 +188,4 @@ const SheetHeader = ({
   );
 };
 
-export default SheetHeader;
+export default CollectionsSheetHeader;

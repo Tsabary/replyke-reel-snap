@@ -20,7 +20,7 @@ const PostActionsBottom = () => {
   const { entity, userUpvotedEntity, upvoteEntity, removeEntityUpvote } =
     useEntity();
   const { entityIsSaved, checkIfEntityIsSaved } = useIsEntitySaved();
-  const { openCommentSectionDrawer, openSaveToListSheet, openSharePostSheet } =
+  const { openCommentSectionSheet, openSaveToListSheet, openSharePostSheet } =
     useSheetManager();
 
   useEffect(() => {
@@ -91,7 +91,7 @@ const PostActionsBottom = () => {
 
             {/* OPEN COMMNENT SECTION */}
             <TouchableOpacity
-              onPress={() => openCommentSectionDrawer?.(entity.id)}
+              onPress={() => openCommentSectionSheet?.(entity.id)}
               className="items-center flex-row gap-2"
             >
               <Ionicons name="chatbubble" size={24} color="#ffffff80" />

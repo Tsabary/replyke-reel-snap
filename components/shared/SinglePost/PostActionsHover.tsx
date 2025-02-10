@@ -14,7 +14,7 @@ import PostFollowButton from "./PostFollowButton";
 function PostActionsHover() {
   const router = useRouter();
   const { user } = useUser();
-  const { openCommentSectionDrawer, openSaveToListSheet } = useSheetManager();
+  const { openCommentSectionSheet, openSaveToListSheet } = useSheetManager();
 
   const { entity, userUpvotedEntity, upvoteEntity, removeEntityUpvote } =
     useEntity();
@@ -74,7 +74,7 @@ function PostActionsHover() {
 
       {/* OPEN COMMNENT SECTION */}
       <TouchableOpacity
-        onPress={() => openCommentSectionDrawer?.(entity.id)}
+        onPress={() => openCommentSectionSheet?.(entity.id)}
         className="items-center gap-1.5"
       >
         <Ionicons name="chatbubble" size={36} color="#ffffff" />
