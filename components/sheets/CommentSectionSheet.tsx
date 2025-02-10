@@ -14,6 +14,7 @@ import {
   Keyboard,
 } from "react-native";
 import {
+  SocialStyleCallbacks,
   useSocialComments,
   useSocialStyle,
   UseSocialStyleProps,
@@ -53,16 +54,8 @@ const CommentsComponents = memo(
     );
     const styleConfig = useSocialStyle(customStyles);
 
-    const {
-      CommentSectionProvider,
-      CommentsFeed,
-      NewCommentForm,
-      SortByButton,
-    } = useSocialComments({
-      entityId,
-      styleConfig,
-      highlightedCommentId,
-      callbacks: {
+    const callbacks: SocialStyleCallbacks = useMemo(
+      () => ({
         currentUserClickCallback: () => {
           Keyboard.dismiss();
           closeCommentSectionDrawer?.();
@@ -80,7 +73,20 @@ const CommentsComponents = memo(
             type: "warning",
           });
         },
-      },
+      }),
+      []
+    );
+
+    const {
+      CommentSectionProvider,
+      CommentsFeed,
+      NewCommentForm,
+      SortByButton,
+    } = useSocialComments({
+      entityId,
+      styleConfig,
+      highlightedCommentId,
+      callbacks,
     });
 
     const commentFormRef = useRef<{ focus: () => void } | null>(null);
@@ -130,7 +136,7 @@ const CommentsComponents = memo(
 
           <CommentsFeed />
           {/* <View className="border-t-hairline border-gray-300"> */}
-            <NewCommentForm ref={commentFormRef} />
+          <NewCommentForm ref={commentFormRef} />
           {/* </View> */}
         </BottomSheetView>
       </CommentSectionProvider>
