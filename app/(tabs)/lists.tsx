@@ -8,7 +8,7 @@ import { Redirect } from "expo-router";
 
 import BackNavigation from "../../components/shared/BackNavigation";
 import SingleBookmark from "../../components/lists/SingleBookmark";
-import { BookmarkSkeleton } from "../../components/shared/Skeleton";
+import { Skeleton } from "@replyke/ui-core-react-native";
 
 function Bookmarks() {
   const { currentList, subLists, openList, goBack } = useLists();
@@ -55,7 +55,26 @@ function Bookmarks() {
             <FlatList
               data={[1, 2]}
               keyExtractor={(item) => item.toString()}
-              renderItem={() => <BookmarkSkeleton />}
+              renderItem={() => (
+                <View className="flex-row gap-3 px-4 py-2.5 items-center">
+                  <Skeleton
+                    style={{
+                      height: 36,
+                      width: 36,
+                      borderRadius: 20,
+                      backgroundColor: "#d1d5db",
+                    }}
+                  />
+                  <Skeleton
+                    style={{
+                      height: 10,
+                      width: "70%",
+                      borderRadius: 6,
+                      backgroundColor: "#d1d5db",
+                    }}
+                  />
+                </View>
+              )}
             />
           )}
         </View>

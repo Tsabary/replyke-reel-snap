@@ -79,9 +79,7 @@ export default function RootLayout() {
           <OwnerPostOptionsSheet />
           <ReportPostSheet />
           <SharePostSheet />
-          <ListsProvider>
-            <CollectionsSheet />
-          </ListsProvider>
+          <CollectionsSheet />
         </ContextProvider>
         {/* </ClerkProvider> */}
       </SafeAreaProvider>

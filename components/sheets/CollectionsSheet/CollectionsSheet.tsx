@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState } from "react";
 import { Platform, KeyboardAvoidingView, Keyboard } from "react-native";
-import { useLists } from "@replyke/expo";
+import { ListsProvider, useLists } from "@replyke/expo";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetBackdropProps,
@@ -52,22 +52,24 @@ const CollectionsSheet = () => {
         className="flex-1"
       >
         <BottomSheetView className="h-full">
-          <SheetHeader
-            newListName={newListName}
-            setNewListName={setNewListName}
-            isCreateListView={isCreateCollectionView}
-            setIsCreateListView={setIsCreateCollectionView}
-          />
+          <ListsProvider>
+            <SheetHeader
+              newListName={newListName}
+              setNewListName={setNewListName}
+              isCreateListView={isCreateCollectionView}
+              setIsCreateListView={setIsCreateCollectionView}
+            />
 
-          <CurrentCollectionItems />
+            <CurrentCollectionItems />
 
-          <CreateNewCollection
-            newListName={newListName}
-            setNewListName={setNewListName}
-            isCreateCollectionView={isCreateCollectionView}
-            setIsCreateCollectionView={setIsCreateCollectionView}
-          />
-          <SubCollections />
+            <CreateNewCollection
+              newListName={newListName}
+              setNewListName={setNewListName}
+              isCreateCollectionView={isCreateCollectionView}
+              setIsCreateCollectionView={setIsCreateCollectionView}
+            />
+            <SubCollections />
+          </ListsProvider>
         </BottomSheetView>
       </KeyboardAvoidingView>
     </BottomSheet>

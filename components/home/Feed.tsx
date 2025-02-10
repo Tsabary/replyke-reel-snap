@@ -1,7 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 import { Animated, RefreshControl, View, Text } from "react-native";
 import { EntityProvider, useFeed } from "@replyke/expo";
-import Skeleton from "../shared/Skeleton";
 import { SinglePost } from "../shared/SinglePost";
 
 function Feed({
@@ -24,7 +23,7 @@ function Feed({
 
   const initialLoading = loading && (!entities || entities.length === 0);
 
-  if (initialLoading) return <Skeleton height="100%" width="100%" />;
+  if (initialLoading) return null; // You can add a loader or a skeleton here
 
   return (
     <View
