@@ -120,19 +120,19 @@ export default () => {
     <AppNotificationsProvider
       notificationTemplates={{
         entityComment: {
-          title: `$userName commented on your post "$entityContent"`,
+          title: `$userName commented on your post`,
         },
         commentReply: {
-          title: `$userName replied to your comment on "$entityContent"`,
+          title: `$userName replied to your comment`,
         },
         commentMention: {
-          title: `$userName mentioned you in their comment on "$entityContent"`,
+          title: `$userName mentioned you in their comment`,
         },
         entityUpvote: {
-          title: `$userName upvoted your comment on "$entityContent"`,
+          title: `$userName upvoted your comment`,
         },
         commentUpvote: {
-          title: `$userName upvoted your comment on "$entityContent"`,
+          title: `$userName upvoted your comment`,
         },
       }}
     >

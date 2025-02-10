@@ -82,11 +82,11 @@ const FinalizePost = ({
         <Text className="text-lg tracking-wide">New Post</Text>
       </Pressable>
       <View className="flex-1">
-        <View className="h-64">
+        <View className="h-80">
           <Image
             source={{ uri: (cameraPhoto ?? galleryPhoto)?.uri }}
             className="flex-1"
-            resizeMode="cover"
+            resizeMode="contain"
           />
         </View>
         <TextInput

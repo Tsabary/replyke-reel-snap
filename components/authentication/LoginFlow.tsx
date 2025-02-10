@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { Keyboard, View } from "react-native";
+import { View } from "react-native";
 import { useForm } from "react-hook-form";
 import { useAuth } from "@replyke/expo";
-import { useRouter } from "expo-router";
 
 import CustomTextInput from "../ui/CustomTextInput";
 import CustomPasswordInput from "../ui/CustomPasswordInput";
@@ -26,7 +25,6 @@ const LoginFlow = () => {
   const email = watch("email");
   const password = watch("password");
 
-  const router = useRouter();
   const { signInWithEmailAndPassword } = useAuth();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,8 +41,6 @@ const LoginFlow = () => {
         email,
         password,
       });
-
-      router.back();
     } catch (err: any) {
       console.error(JSON.stringify(err, null, 2));
     } finally {
