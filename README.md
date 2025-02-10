@@ -1,7 +1,26 @@
 
 # ReelSnap
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![npm](https://img.shields.io/badge/types-included-blue?style=flat-square)
+[![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/)
+
 ReelSnap is a modern boilerplate for building social networks inspired by TikTok and Instagram Reels. It comes with fully functional authentication, dynamic feeds, profiles, and a suite of social features. ReelSnap is powered by [**Replyke**](https://replyke.com/), making it the perfect starting point for developers who want to build engaging, community-driven apps without the hassle of backend complexities.
+
+## Stay Updated
+Join the 
+<a  href="https://discord.gg/REKxnCJzPz" target="_blank">
+Discord server
+</a>
+and follow on
+<a  href="https://x.com/replykejs" target="_blank">
+X/Twitter
+</a>
+and
+<a  href="https://replyke.bsky.social" target="_blank">
+BlueSky
+</a>
+to be notified about important changes 
 
 ----------
 
@@ -88,7 +107,7 @@ Learn more about what you can achieve with Replyke at [replyke.com](https://repl
     Clone the boilerplate to your local machine:
     
     ```bash
-    git clone <repository_url> cd <repository_name>
+    git clone https://github.com/replyke/reel-snap.git cd <your_repository_name>
     ``` 
     
 2.  **Create a Replyke account**  
@@ -119,12 +138,6 @@ Contributions are welcome! If you'd like to improve Replyke's ReelSnap repo or f
 ## License
 
 This project is open-source under the MIT license.
-
-----------
-
-## Support
-
-For questions or issues, join the Replyke community or contact support at our [Discord Server](https://discord.gg/REKxnCJzPz).
 
 ----------
 
