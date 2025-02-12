@@ -46,7 +46,7 @@ function SubCollections() {
               <View className="bg-gray-700 p-2 rounded-2xl">
                 <Entypo name="list" size={20} color="#fff" />
               </View>
-              <Text className="text-gray-300">{subList.name}</Text>
+              <Text className="text-gray-700">{subList.name}</Text>
             </Pressable>
           )}
         />

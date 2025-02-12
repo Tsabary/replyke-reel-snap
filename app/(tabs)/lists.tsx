@@ -80,10 +80,10 @@ function Bookmarks() {
         </View>
         {(subLists?.length || 0) > 0 && (
           <View className="mt-5">
-            <Text className="text-xl text-gray-100 px-5 py-5 border-t border-b border-gray-800">
+            <Text className="text-xl text-gray-800 px-5 py-5 border-t border-b border-gray-800">
               Sub Lists
             </Text>
-            <View className="mt-4">
+            <View className="my-4">
               <FlatList
                 data={subLists}
                 keyExtractor={(item) => item.id}
@@ -95,7 +95,7 @@ function Bookmarks() {
                     <View className="bg-gray-700 p-2 rounded-2xl">
                       <Entypo name="list" size={20} color="#fff" />
                     </View>
-                    <Text className="text-gray-300">{subList.name}</Text>
+                    <Text className="text-gray-800">{subList.name}</Text>
                   </Pressable>
                 )}
               />
